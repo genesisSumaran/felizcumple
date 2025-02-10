@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz cumpleaños Lu!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Incluir el CDN de canvas-confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>¡Feliz 11° cumpleaños, Lu!</h1>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#saludo">Saludo</a></li>
+                <li><a href="#deseos">Deseos</a></li>
+                <li><a href="#mensaje">Mensaje Personal</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <!-- Contenedor del texto -->
+        <div class="text-container">
+            <div id="saludo" class="section saludo">
+                <h2>Hola Lu, ¡qué alegría!</h2>
+                <p>¡Me alegro tanto de que ya cumplas 11 años! Estoy muy feliz por ti, porque eres una niña tan
+                    especial, llena de bondad y luz. Desde que naciste, trajiste felicidad a todos los que te conocemos,
+                    y hoy quiero felicitarte con todo mi corazón. ¡Te quiero mucho, Lu!</p>
+            </div>
+
+            <div id="deseos" class="section deseos">
+                <h2>Mis mejores deseos para ti</h2>
+                <p>Deseo que este nuevo año de vida esté lleno de momentos felices, aprendizajes increíbles y muchísimas
+                    bendiciones. Eres una niña muy linda, inteligente y con un corazón grandísimo. Que Dios te bendiga
+                    siempre y te dé lo mejor. ¡Te mereces lo mejor de este mundo, Lu! Siempre estaremos aquí, apoyándote
+                    en todo lo que hagas.</p>
+            </div>
+
+            <div id="mensaje" class="section mensaje">
+                <h2>Un mensaje muy especial</h2>
+                <p>Querida Lucero, estoy tan orgullosa de ti. Hoy celebramos tus 11 años, y quiero que sepas lo
+                    afortunada que me siento de conocerte y ser parte de tu vida. Eres una niña con una gran bondad,
+                    inteligencia y una forma tan especial de hacer sonreír a todos. Que este día sea solo el comienzo de
+                    un año maravilloso, lleno de amor y felicidad. ¡Que sigas creciendo de manera increíble, como hasta
+                    ahora! ¡Te queremos muchísimo, Lu!</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="imagen-container">
+        <img src="luu.png" alt="Imagen de cumpleaños" class="imagen" />
+    </div>
+    </div>
+
+    <div class="footer">
+        <p>Con todo mi cariño, tu tía Génesis y Yulisa.</p>
+    </div>
+
+    <script>
+        var duration = 20 * 1000;
+        var animationEnd = Date.now() + duration;
+        var skew = 1;
+
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        var interval = setInterval(function () {
+            var timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            var particleCount = 50 * (timeLeft / duration);
+            confetti({
+                particleCount,
+                origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+            });
+            confetti({
+                particleCount,
+                origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+            });
+        }, 250);
+
+        (function frame() {
+            var timeLeft = animationEnd - Date.now();
+            var ticks = Math.max(200, 500 * (timeLeft / duration));
+            skew = Math.max(0.8, skew - 0.001);
+
+            confetti({
+                particleCount: 1,
+                startVelocity: 0,
+                ticks: ticks,
+                origin: {
+                    x: Math.random(),
+                    y: (Math.random() * skew) - 0.2
+                },
+                colors: ['#ffffff'],
+                shapes: ['circle'],
+                gravity: randomInRange(0.4, 0.6),
+                scalar: randomInRange(0.4, 1),
+                drift: randomInRange(-0.4, 0.4)
+            });
+
+            if (timeLeft > 0) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    </script>
+</body>
+
+</html>

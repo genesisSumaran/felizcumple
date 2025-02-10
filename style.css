@@ -1,0 +1,157 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4E7FB;
+    color: #4A4A4A;
+}
+
+.header {
+    background-color: #E3AADD;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    color: #2C2C2C;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.navigation ul li a:hover {
+    color: #F5BCBA;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 30px;
+    background-color: #F3DCDC;
+}
+
+.text-container {
+    width: 60%;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #C8A8E9;
+}
+
+.section h2 {
+    color: #4A4A4A;
+    font-size: 2em;
+}
+
+.section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.imagen-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.imagen:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.imagen:active {
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.footer {
+    background-color: #E3AADD;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .text-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .imagen-container {
+        width: 100%;
+        margin-top: 20px;
+        order: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imagen {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .navigation ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navigation ul li a {
+        font-size: 1.5em;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    .section p {
+        font-size: 1.1em;
+    }
+}
