@@ -41,15 +41,17 @@ body {
 
 .content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    /* Permitir que los elementos se ajusten al ancho */
+    justify-content: center;
     padding: 30px;
     background-color: #F3DCDC;
 }
 
 .text-container {
     width: 60%;
+    margin-right: 20px;
+    /* Espacio entre la imagen y el texto */
 }
 
 .section {
@@ -71,19 +73,21 @@ body {
 }
 
 .imagen-container {
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .imagen {
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     cursor: pointer;
+    margin: 20px;
 }
 
 .imagen:hover {
@@ -111,30 +115,37 @@ body {
 @media screen and (max-width: 768px) {
     .content {
         flex-direction: column;
+        /* Colocar los elementos de forma vertical */
         align-items: center;
+        /* Alinear al centro */
         padding: 15px;
+        /* Menos espacio de relleno */
     }
 
     .text-container {
         width: 100%;
-        margin-bottom: 20px;
+        /* Ocupa todo el ancho */
+        margin-right: 0;
+        /* Quitar margen a la derecha */
     }
 
     .imagen-container {
         width: 100%;
+        /* Imagen ocupa todo el ancho disponible */
         margin-top: 20px;
         order: 1;
-        display: flex;
-        justify-content: center;
+        /* Coloca la imagen después del texto */
     }
 
     .imagen {
         width: 90%;
+        /* Ajustar imagen al 90% de su contenedor */
         max-width: 350px;
     }
 
     .header h1 {
         font-size: 2em;
+        /* Ajustar tamaño de fuente en móvil */
     }
 
     .navigation ul li {
