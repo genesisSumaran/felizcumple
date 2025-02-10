@@ -7,8 +7,6 @@
     <title>¡Feliz cumpleaños Lu!</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-
-    <!-- Incluir el CDN de canvas-confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
@@ -25,28 +23,35 @@
     </div>
 
     <div class="content">
-        <!-- Contenedor del texto -->
         <div class="text-container">
             <div id="saludo" class="section saludo">
                 <h2>Hola Lu, ¡qué alegría!</h2>
-                <p>¡Me alegro tanto de que ya cumplas 11 años! Estoy muy feliz por ti, porque eres una niña tan especial, llena de bondad y luz. Desde que naciste, trajiste felicidad a todos los que te conocemos, y hoy quiero felicitarte con todo mi corazón. ¡Te quiero mucho, Lu!</p>
-                </div>
-                
-                <div id="deseos" class="section deseos">
-                    <h2>Mis mejores deseos para ti</h2>
-                    <p>Deseo que este nuevo año de vida esté lleno de momentos felices, aprendizajes increíbles y muchísimas bendiciones. Eres una niña muy linda, inteligente y con un corazón grandísimo. Que Dios te bendiga siempre y te dé lo mejor. ¡Te mereces lo mejor de este mundo, Lu! Siempre estaremos aquí, apoyándote en todo lo que hagas.</p>
-                </div>
-                
-                <div id="mensaje" class="section mensaje">
-                    <h2>Un mensaje muy especial</h2>
-                    <p>Querida Lucero, estoy tan orgullosa de ti. Hoy celebramos tus 11 años, y quiero que sepas lo afortunada que me siento de conocerte y ser parte de tu vida. Eres una niña con una gran bondad, inteligencia y una forma tan especial de hacer sonreír a todos. Que este día sea solo el comienzo de un año maravilloso, lleno de amor y felicidad. ¡Que sigas creciendo de manera increíble, como hasta ahora! ¡Te queremos muchísimo, Lu!</p>
-                </div>
-                
+                <p>¡Me alegro tanto de que ya cumplas 11 años! Estoy muy feliz por ti, porque eres una niña tan
+                    especial, llena de bondad y luz. Desde que naciste, trajiste felicidad a todos los que te conocemos,
+                    y hoy quiero felicitarte con todo mi corazón. ¡Te quiero mucho, Lu!</p>
+            </div>
+
+            <div id="deseos" class="section deseos">
+                <h2>Mis mejores deseos para ti</h2>
+                <p>Deseo que este nuevo año de vida esté lleno de momentos felices, aprendizajes increíbles y muchísimas
+                    bendiciones. Eres una niña muy linda, inteligente y con un corazón grandísimo. Que Dios te bendiga
+                    siempre y te dé lo mejor. ¡Te mereces lo mejor de este mundo, Lu! Siempre estaremos aquí, apoyándote
+                    en todo lo que hagas.</p>
+            </div>
+
+            <div id="mensaje" class="section mensaje">
+                <h2>Un mensaje muy especial</h2>
+                <p>Querida Lucero, estoy tan orgullosa de ti. Hoy celebramos tus 11 años, y quiero que sepas lo
+                    afortunada que me siento de conocerte y ser parte de tu vida. Eres una niña con una gran bondad,
+                    inteligencia y una forma tan especial de hacer sonreír a todos. Que este día sea solo el comienzo de
+                    un año maravilloso, lleno de amor y felicidad. ¡Que sigas creciendo de manera increíble, como hasta
+                    ahora! ¡Te queremos muchísimo, Lu!</p>
             </div>
         </div>
 
-        <!-- Imagen a la derecha -->
+        <div class="imagen-container">
             <img src="luu.png" alt="Imagen de cumpleaños" class="imagen" />
+        </div>
     </div>
 
     <div class="footer">
@@ -62,7 +67,6 @@
             return Math.random() * (max - min) + min;
         }
 
-        // Animación de confetti
         var interval = setInterval(function () {
             var timeLeft = animationEnd - Date.now();
 
@@ -81,7 +85,6 @@
             });
         }, 250);
 
-        // Segunda animación de confetti con más variación
         (function frame() {
             var timeLeft = animationEnd - Date.now();
             var ticks = Math.max(200, 500 * (timeLeft / duration));
